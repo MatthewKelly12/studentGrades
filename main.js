@@ -65,10 +65,21 @@ let mostGrades = gradeArray.sort(
 
 for (x in grades) {
     if (grades[x] === mostGrades[0]) {
-        console.log(`The grade that the students scored most was ${x}`);
+        console.log(`The grade that the students scored most was ${x} with ${mostGrades[0]}`);
     }
 }
 
+let leastGrades = gradeArray.sort(
+    function (num1, num2) {
+        return num1 - num2;
+    }
+).slice(0, 1);
+
+for (x in grades) {
+    if (grades[x] === leastGrades[0]) {
+        console.log(`The grade that students scored the least was ${x} with ${leastGrades[0]}`)
+    }
+}
 // console.log(mostGrades)
 // console.log(mostGrades[0])
 
