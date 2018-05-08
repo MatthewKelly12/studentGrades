@@ -39,7 +39,7 @@ const lowScore = scores.sort(
       return score1 - score2;
 }).slice(0, 1);
 
-console.log(`Lowest Score is ${lowScore}`)
+console.log(`Lowest Grade is ${lowScore}`)
 
 const highScore = scores.sort(
     function(num1, num2) {
@@ -47,4 +47,29 @@ const highScore = scores.sort(
     }
 ).slice(0, 1);
 
-console.log(`Highest Score is ${highScore}`)
+console.log(`Highest Grade is ${highScore}`)
+
+// Which grade had the most students achieve it?
+//  Use an if statment, and a currentGradeCount variable,
+//  in your for..in loop to see if the current grade's
+//  value is higher than the last one.
+let gradeArray = [];
+for (x in grades) {
+     gradeArray.push(grades[x]);
+}
+
+let mostGrades = gradeArray.sort(
+    function(num1, num2) {
+      return num2 - num1;
+    }).slice(0, 1);
+
+for (x in grades) {
+    if (grades[x] === mostGrades[0]) {
+        console.log(`The grade that the students scored most was ${x}`);
+    }
+}
+
+// console.log(mostGrades)
+// console.log(mostGrades[0])
+
+// console.log(gradeArray);
